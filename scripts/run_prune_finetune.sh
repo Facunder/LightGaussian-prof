@@ -13,7 +13,8 @@ port=6041
 
 # Only one dataset specified here, but you could run multiple
 declare -a run_args=(
-    "bicycle"
+    # "bicycle" 
+    "lego"
     # "bonsai"
     # "counter"
     # "kitchen"
@@ -69,12 +70,13 @@ for arg in "${run_args[@]}"; do
           echo "GPU $gpu_id is available. Starting prune_finetune.py with dataset '$arg', prune_percent '$prune_percent', prune_type '$prune_type', prune_decay '$prune_decay', and v_pow '$vp' on port $port"
           
           CUDA_VISIBLE_DEVICES=$gpu_id nohup python prune_finetune.py \
-            -s "PATH/TO/DATASET/$arg" \
-            -m "OUTPUT/PATH/${arg}_${prune_percent}" \
+            -s "/root/autodl-tmp/nerf_synthetic/$arg" \
+            -m "/root/autodl-tmp/LightGaussianOutput/${arg}_${prune_percent}" \
             --eval \
             --port $port \
-            --start_checkpoint "PATH/TO/CHECKPOINT/$arg/chkpnt30000.pth" \
+            --start_checkpoint "/root/autodl-tmp/LightGaussianOutput/$arg/chkpnt3000.pth" \
             --iteration 35000 \
+            --save_iterations 35000 \
             --prune_percent $prune_percent \
             --prune_type $prune_type \
             --prune_decay $prune_decay \

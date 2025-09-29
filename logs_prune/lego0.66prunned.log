@@ -1,0 +1,14 @@
+Optimizing /root/autodl-tmp/LightGaussianOutput/lego_0.66
+Output folder: /root/autodl-tmp/LightGaussianOutput/lego_0.66 [29/09 14:52:23]
+/root/autodl-tmp/nerf_synthetic/lego [29/09 14:52:23]
+Found transforms_train.json file, assuming Blender data set! [29/09 14:52:23]
+Reading Training Transforms [29/09 14:52:23]
+Reading Test Transforms [29/09 14:52:30]
+Loading Training Cameras [29/09 14:52:44]
+Loading Test Cameras [29/09 14:52:46]
+Number of points at initialisation :  100000 [29/09 14:52:47]
+Training progress:   0%|          | 0/2000 [00:00<?, ?it/s]Training progress:   0%|          | 0/2000 [00:08<?, ?it/s, Loss=0.0320594]Training progress:  50%|█████     | 1000/2000 [00:08<00:08, 113.03it/s, Loss=0.0320594]Training progress:  50%|█████     | 1000/2000 [00:17<00:08, 113.03it/s, Loss=0.0283262]Training progress: 100%|██████████| 2000/2000 [00:17<00:00, 114.06it/s, Loss=0.0283262]Training progress: 100%|██████████| 2000/2000 [00:17<00:00, 113.91it/s, Loss=0.0283262]
+
+[ITER 5000] Saving Gaussians [29/09 14:53:05]
+
+Training complete. [29/09 14:53:05]

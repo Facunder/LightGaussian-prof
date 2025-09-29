@@ -149,13 +149,14 @@ def training(
         if (iteration - 1) == debug_from:
             pipe.debug = True
         render_pkg = render(viewpoint_cam, gaussians, pipe, background)
-        image, viewspace_point_tensor, visibility_filter, radii = (
+        image, viewspace_point_tensor, buffer = (
             render_pkg["render"],
             render_pkg["viewspace_points"],
-            render_pkg["visibility_filter"],
-            render_pkg["radii"],
+            render_pkg["buffer"]
         )
-
+        radii = buffer["radii"]
+        visibility_filter = radii > 0
+        
         # Loss
         gt_image = viewpoint_cam.original_image.cuda()
         Ll1 = l1_loss(image, gt_image)
@@ -181,6 +182,9 @@ def training(
             if iteration in saving_iterations:
                 print("\n[ITER {}] Saving Gaussians".format(iteration))
                 scene.save(iteration)
+                sim_input_path_buffer = os.path.join(args.model_path, "sim_input_ft/iteration_{}".format(iteration), "buffer_raw_data.pt")           
+                mkdir_p(os.path.dirname(sim_input_path_buffer))
+                torch.save(buffer, sim_input_path_buffer)
 
             if iteration in checkpoint_iterations:
                 print("\n[ITER {}] Saving Checkpoint".format(iteration))
@@ -303,7 +307,7 @@ if __name__ == "__main__":
         "--test_iterations", nargs="+", type=int, default=[30_001, 30_002, 35_000]
     )
     parser.add_argument(
-        "--save_iterations", nargs="+", type=int, default=[35_000]
+        "--save_iterations", nargs="+", type=int, default=[5_000, 35_000]
     )
     parser.add_argument("--quiet", action="store_true")
     parser.add_argument(

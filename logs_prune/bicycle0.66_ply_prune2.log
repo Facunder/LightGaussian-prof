@@ -1,0 +1,11 @@
+Optimizing OUTPUT/PATH/bicycle_0.66
+Output folder: OUTPUT/PATH/bicycle_0.66 [29/09 15:33:22]
+/root/LightGaussian/PATH/TO/DATASET/bicycle [29/09 15:33:22]
+Traceback (most recent call last):
+  File "prune_finetune.py", line 347, in <module>
+    args,
+  File "prune_finetune.py", line 69, in training
+    scene = Scene(dataset, gaussians)
+  File "/root/LightGaussian/scene/__init__.py", line 64, in __init__
+    assert False, "Could not recognize scene type!"
+AssertionError: Could not recognize scene type!

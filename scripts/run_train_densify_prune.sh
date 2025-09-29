@@ -13,7 +13,8 @@ port=6035
 
 # Only one dataset specified here
 declare -a run_args=(
-    "bicycle"
+    # "bicycle"
+    "lego"
     # "bonsai"
     # "counter"
     # "kitchen"
@@ -25,10 +26,10 @@ declare -a run_args=(
 )
 
 # prune percentage for the first prune
-declare -a prune_percents=(0.6)
+declare -a prune_percents=(0.7) # 0.6
 
 # decay rate for the following prune
-declare -a prune_decays=(0.6)
+declare -a prune_decays=(0.7) # 0.6 orig
 
 # The volumetric importance power
 declare -a v_pow=(0.1)
@@ -62,11 +63,11 @@ for arg in "${run_args[@]}"; do
           echo "GPU $gpu_id is available. Starting train_densify_prune.py with dataset '$arg', prune_percent '$prune_percent', prune_type '$prune_type', prune_decay '$prune_decay', and v_pow '$vp' on port $port"
 
           CUDA_VISIBLE_DEVICES=$gpu_id nohup python train_densify_prune.py \
-            -s "PATH/TO/DATASET/$arg" \
-            -m "OUTPUT/PATH/${arg}" \
+            -s "/root/autodl-tmp/nerf_synthetic/$arg" \
+            -m "/root/autodl-tmp/LightGaussianOutput/${arg}" \
             --prune_percent "$prune_percent" \
             --prune_decay "$prune_decay" \
-            --prune_iterations 20000 \
+            --prune_iterations 10000 15000 \
             --v_pow "$vp" \
             --eval \
             --port "$port" \
