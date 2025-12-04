@@ -53,6 +53,7 @@ def training_report(
     scene: Scene,
     renderFunc,
     renderArgs,
+    obb_flag=False
 ):
     if tb_writer:
         tb_writer.add_scalar("train_loss_patches/l1_loss", Ll1.item(), iteration)
@@ -68,7 +69,7 @@ def training_report(
             "l1_loss",
             "psnr",
             "ssim",
-            "lpips",
+            # "lpips",
             "file_size",
             "elapsed",
         ]
@@ -105,7 +106,7 @@ def training_report(
                 lpips_test = 0.0
                 for idx, viewpoint in enumerate(config["cameras"]):
                     image = torch.clamp(
-                        renderFunc(viewpoint, scene.gaussians, *renderArgs)["render"],
+                        renderFunc(viewpoint, scene.gaussians, *renderArgs, obb_flag=obb_flag)["render"],
                         0.0,
                         1.0,
                     )
@@ -129,22 +130,23 @@ def training_report(
                     l1_test += l1_loss(image, gt_image).mean().double()
                     psnr_test += psnr(image, gt_image).mean().double()
                     ssim_test += ssim(image, gt_image).mean().double()
-                    lpips_test += lpips(image, gt_image, net_type="vgg").mean().double()
+                    # lpips_test += lpips(image, gt_image, net_type="vgg").mean().double()
 
                 psnr_test /= len(config["cameras"])
                 l1_test /= len(config["cameras"])
                 ssim_test /= len(config["cameras"])
-                lpips_test /= len(config["cameras"])
+                # lpips_test /= len(config["cameras"])
                 # sys.stderr.write(f"Iteration  {iteration} Evaluating {config['name']}: L1 {l1_test} PSNR {psnr_test} SSIM {ssim_test} LPIPS {lpips_test}\n")
                 # sys.stderr.flush()
                 print(
-                    "\n[ITER {}] Evaluating {}: L1 {} PSNR {} SSIM {} LPIPS {}".format(
+                    # "\n[ITER {}] Evaluating {}: L1 {} PSNR {} SSIM {} LPIPS {}".format(
+                    "\n[ITER {}] Evaluating {}: L1 {} PSNR {} SSIM {}".format(
                         iteration,
                         config["name"],
                         l1_test,
                         psnr_test,
                         ssim_test,
-                        lpips_test,
+                        # lpips_test,
                     )
                 )
                 if tb_writer:
@@ -157,11 +159,11 @@ def training_report(
                     tb_writer.add_scalar(
                         config["name"] + "/loss_viewpoint - ssim", ssim_test, iteration
                     )
-                    tb_writer.add_scalar(
-                        config["name"] + "/loss_viewpoint - lpips",
-                        lpips_test,
-                        iteration,
-                    )
+                    # tb_writer.add_scalar(
+                    #     config["name"] + "/loss_viewpoint - lpips",
+                    #     lpips_test,
+                    #     iteration,
+                    # )
                 if config["name"] == "test":
                     with open(csv_path, "a", newline="") as csvfile:
                         writer = csv.DictWriter(csvfile, fieldnames=headers)
@@ -172,7 +174,7 @@ def training_report(
                                 "l1_loss": l1_test.item(),
                                 "psnr": psnr_test.item(),
                                 "ssim": ssim_test.item(),
-                                "lpips": lpips_test.item(),
+                                # "lpips": lpips_test.item(),
                                 "file_size": file_size_mb,
                                 "elapsed": elapsed,
                             }

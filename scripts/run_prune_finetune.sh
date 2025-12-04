@@ -35,7 +35,7 @@ declare -a run_args=(
 
 
 # Prune percentages and corresponding decays, volume power
-declare -a prune_percents=(0.66)
+declare -a prune_percents=(0.36)
 # decay rate for the following prune. The 2nd prune would prune out 0.5 x 0.6 = 0.3 of the remaining gaussian
 declare -a prune_decays=(1)
 # The volumetric importance power. The higher it is the more weight the volume is in the Global significant
@@ -43,7 +43,8 @@ declare -a v_pow=(0.1)
 
 # prune type, by default the Global significant listed in the paper, but there are other option that you can play with
 declare -a prune_types=(
-  "v_important_score"
+  # "v_important_score"
+  "opacity"
   # "important_score"
   # "count"
   )
@@ -74,9 +75,10 @@ for arg in "${run_args[@]}"; do
             -m "/root/autodl-tmp/LightGaussianOutput/${arg}_${prune_percent}" \
             --eval \
             --port $port \
-            --start_checkpoint "/root/autodl-tmp/LightGaussianOutput/$arg/chkpnt3000.pth" \
+            --start_checkpoint "/root/autodl-tmp/LightGaussianOutput/$arg/chkpnt15000.pth" \
             --iteration 35000 \
             --save_iterations 35000 \
+            --test_iterations 35000 \
             --prune_percent $prune_percent \
             --prune_type $prune_type \
             --prune_decay $prune_decay \

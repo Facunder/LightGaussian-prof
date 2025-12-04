@@ -88,7 +88,7 @@ def training(
                 ) = network_gui.receive()
                 if custom_cam != None:
                     net_image = render(
-                        custom_cam, gaussians, pipe, background, scaling_modifer
+                        custom_cam, gaussians, pipe, background, scaling_modifer, obb_flag=False
                     )["render"]
                     net_image_bytes = memoryview(
                         (torch.clamp(net_image, min=0, max=1.0) * 255)
@@ -123,7 +123,7 @@ def training(
         # Render
         if (iteration - 1) == debug_from:
             pipe.debug = True
-        render_pkg = render(viewpoint_cam, gaussians, pipe, background)
+        render_pkg = render(viewpoint_cam, gaussians, pipe, background, obb_flag=False)
         # image, viewspace_point_tensor, visibility_filter, radii = (
         image, viewspace_point_tensor, buffer = (
             render_pkg["render"],
@@ -133,7 +133,9 @@ def training(
             # render_pkg["radii"],
         )
         radii = buffer["radii"]
+        # print(radii)
         visibility_filter = radii > 0
+        # print(visibility_filter)
 
         # Loss
         gt_image = viewpoint_cam.original_image.cuda()
@@ -161,6 +163,7 @@ def training(
                 sim_input_path_buffer = os.path.join(args.model_path, "sim_input/iteration_{}".format(iteration), "buffer_raw_data.pt")           
                 mkdir_p(os.path.dirname(sim_input_path_buffer))
                 torch.save(buffer, sim_input_path_buffer)
+                
             training_report(
                 tb_writer,
                 iteration,
@@ -177,9 +180,12 @@ def training(
             # Densification
             if iteration < opt.densify_until_iter:
                 # Keep track of max radii in image-space for pruning
+
+                # print(gaussians.max_radii2D)
                 gaussians.max_radii2D[visibility_filter] = torch.max(
                     gaussians.max_radii2D[visibility_filter], radii[visibility_filter]
                 )
+
                 gaussians.add_densification_stats(
                     viewspace_point_tensor, visibility_filter
                 )
@@ -250,11 +256,12 @@ if __name__ == "__main__":
         default=[3_000, 7_000, 10_000, 15_000, 20_000, 30_000],
     )
     parser.add_argument(
-        "--save_iterations", nargs="+", type=int, default=[3_000, 7_000, 30_000]
+        # "--save_iterations", nargs="+", type=int, default=[3_000, 7_000, 30_000]
+        "--save_iterations", nargs="+", type=int, default=[15_000, 20_000, 30_000]
     )
     parser.add_argument("--quiet", action="store_true")
     parser.add_argument(
-        "--checkpoint_iterations", nargs="+", type=int, default=[3_000, 7_000, 30_000]
+        "--checkpoint_iterations", nargs="+", type=int, default=[15_000, 20_000, 30_000]
     )
     parser.add_argument("--start_checkpoint", type=str, default=None)
 

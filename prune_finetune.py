@@ -12,6 +12,7 @@
 import os
 import torch
 from random import randint
+from utils.util_system import mkdir_p
 from utils.loss_utils import l1_loss, ssim
 from lpipsPyTorch import lpips
 from gaussian_renderer import render, network_gui, count_render
@@ -94,7 +95,7 @@ def training(
     ema_loss_for_log = 0.0
     progress_bar = tqdm(range(first_iter, opt.iterations), desc="Training progress")
     first_iter += 1
-    gaussians.scheduler = ExponentialLR(gaussians.optimizer, gamma=0.95)
+    gaussians.scheduler = ExponentialLR(gaussians.optimizer, gamma=0.99) # 0.95 orig， slow down LR decline
 
     for iteration in range(first_iter, opt.iterations + 1):
         if network_gui.conn == None:
@@ -112,7 +113,7 @@ def training(
                 ) = network_gui.receive()
                 if custom_cam != None:
                     net_image = render(
-                        custom_cam, gaussians, pipe, background, scaling_modifer
+                        custom_cam, gaussians, pipe, background, scaling_modifer, obb_flag=True
                     )["render"]
                     net_image_bytes = memoryview(
                         (torch.clamp(net_image, min=0, max=1.0) * 255)
@@ -148,7 +149,7 @@ def training(
         # Render
         if (iteration - 1) == debug_from:
             pipe.debug = True
-        render_pkg = render(viewpoint_cam, gaussians, pipe, background)
+        render_pkg = render(viewpoint_cam, gaussians, pipe, background, obb_flag=True)
         image, viewspace_point_tensor, buffer = (
             render_pkg["render"],
             render_pkg["viewspace_points"],
@@ -212,9 +213,11 @@ def training(
                 scene,
                 render,
                 (pipe, background),
+                obb_flag=True
             )
 
             if iteration in args.prune_iterations:
+                print("[INFO] Prune iteration: " + str(iteration))
                 ic("Before prune iteration, number of gaussians: " + str(len(gaussians.get_xyz)))
                 i = args.prune_iterations.index(iteration)
                 gaussian_list, imp_list = prune_list(gaussians, scene, pipe, background)
@@ -314,7 +317,7 @@ if __name__ == "__main__":
         "--checkpoint_iterations", nargs="+", type=int, default=[35_000]
     )
 
-    parser.add_argument("--prune_iterations", nargs="+", type=int, default=[30_001])
+    parser.add_argument("--prune_iterations", nargs="+", type=int, default=[18_001])
     parser.add_argument("--start_checkpoint", type=str, default=None)
     parser.add_argument("--start_pointcloud", type=str, default=None)
     parser.add_argument("--prune_percent", type=float, default=0.1)

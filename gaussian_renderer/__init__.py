@@ -26,6 +26,7 @@ def render(
     bg_color: torch.Tensor,
     scaling_modifier=1.0,
     override_color=None,
+    obb_flag=False,
 ):
     """
     Render the scene.
@@ -63,6 +64,7 @@ def render(
         prefiltered=False,
         debug=pipe.debug,
         f_count=False,
+        obb_flag=obb_flag,
     )
 
     rasterizer = GaussianRasterizer(raster_settings=raster_settings)
@@ -149,6 +151,7 @@ def count_render(
     bg_color: torch.Tensor,
     scaling_modifier=1.0,
     override_color=None,
+    obb_flag=False,
 ):
     """
     Render the scene.
@@ -185,6 +188,7 @@ def count_render(
         prefiltered=False,
         debug=pipe.debug,
         f_count=True,
+        obb_flag=obb_flag,
     )
 
     rasterizer = GaussianRasterizer(raster_settings=raster_settings)

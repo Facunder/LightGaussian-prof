@@ -12,6 +12,7 @@
 import torch
 from scene import Scene
 import os
+import numpy as np
 from tqdm import tqdm
 from os import makedirs
 from gaussian_renderer import render
@@ -20,6 +21,37 @@ from utils.general_utils import safe_state
 from argparse import ArgumentParser
 from arguments import ModelParams, PipelineParams, get_combined_args
 from gaussian_renderer import GaussianModel
+from utils.util_system import mkdir_p
+
+def pack_byte_data(buffer_in, dtype):
+    '''
+    Convert little-end raw byte data to target data type
+    :param buffer_in: raw byte data (torch.Tensor or np.ndarray)
+    :param dtype: target data type, only numpy dtype
+    :return: The packed data in target data type
+    '''
+    if isinstance(buffer_in, torch.Tensor):
+        buffer_in = np.array(buffer_in.to('cpu')).tobytes()
+    packed_data = np.frombuffer(buffer_in, dtype=dtype)
+    return packed_data
+
+def get_bin_buffer_offset(P:int, align=128):
+    '''
+    Get the byte offset of target parameters in Binning Buffer(The duplicated key-value list after rasterization)
+        :param P: the number of the duplicated Gaussian Points
+        :param align: The boundary for byte alignment
+        :return: The offset dict to target parameters
+    '''
+    align = align - 1
+    target_dict = {}
+    offset = 0
+    target_dict["point_list"] = offset
+    offset = (offset + P * 4 + align) & ~align  # unit32 point_list (GaussID)
+    offset = (offset + P * 4 + align) & ~align  # unit32 point_list_unsorted (GaussID)
+    target_dict["key_list"] = offset
+    offset = (offset + P * 8 + align) & ~align  # uint64 point_list_keys (tile | depth)
+    offset = (offset + P * 8 + align) & ~align  # uint64 point_list_keys_unsorted (tile | depth)
+    return target_dict
 
 
 def render_set(model_path, name, iteration, views, gaussians, pipeline, background):
@@ -30,7 +62,24 @@ def render_set(model_path, name, iteration, views, gaussians, pipeline, backgrou
     makedirs(gts_path, exist_ok=True)
 
     for idx, view in enumerate(tqdm(views, desc="Rendering progress")):
-        rendering = render(view, gaussians, pipeline, background)["render"]
+        print("[INFO] Rendering view {}".format(idx))
+        render_pkg = render(view, gaussians, pipeline, background, obb_flag=True)
+        rendering = render_pkg["render"]
+        buffer = render_pkg["buffer"]
+
+        # generate sim input
+        if idx == 68:
+            sim_input_path_buffer = os.path.join(model_path, "sim_input_test_res/iteration_{}".format(iteration), "buffer_raw_data.pt")           
+            mkdir_p(os.path.dirname(sim_input_path_buffer))
+            torch.save(buffer, sim_input_path_buffer)
+
+        # static fragments
+        binningBuffer = buffer["binningBuffer"]
+        list_num = buffer["num_rendered"]
+        bin_dict = get_bin_buffer_offset(list_num)
+        point_list_buffer = binningBuffer[bin_dict["point_list"]:bin_dict["point_list"]+4*list_num]
+        point_list_data = pack_byte_data(point_list_buffer, np.uint32)
+        print("[INFO] Fragment Number: {}".format(len(point_list_data)))
         gt = view.original_image[0:3, :, :]
         torchvision.utils.save_image(
             rendering, os.path.join(render_path, "{0:05d}".format(idx) + ".png")

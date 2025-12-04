@@ -1,0 +1,610 @@
+Looking for config file in /root/autodl-tmp/LightGaussianOutput/lego_0.36/cfg_args
+Config file found: /root/autodl-tmp/LightGaussianOutput/lego_0.36/cfg_args
+Rendering /root/autodl-tmp/LightGaussianOutput/lego_0.36
+Loading trained model at iteration 35000 [30/09 20:13:58]
+/root/autodl-tmp/nerf_synthetic/lego [30/09 20:13:58]
+Found transforms_train.json file, assuming Blender data set! [30/09 20:13:58]
+Reading Training Transforms [30/09 20:13:58]
+Reading Test Transforms [30/09 20:14:05]
+Loading Training Cameras [30/09 20:14:18]
+Loading Test Cameras [30/09 20:14:21]
+[INFO] Rendering view 0 [30/09 20:14:22]
+[INFO] Fragment Number: 303216 [30/09 20:14:22]
+[INFO] Rendering view 1 [30/09 20:14:22]
+[INFO] Fragment Number: 310042 [30/09 20:14:22]
+[INFO] Rendering view 2 [30/09 20:14:23]
+[INFO] Fragment Number: 328465 [30/09 20:14:23]
+[INFO] Rendering view 3 [30/09 20:14:23]
+[INFO] Fragment Number: 355837 [30/09 20:14:23]
+[INFO] Rendering view 4 [30/09 20:14:23]
+[INFO] Fragment Number: 383069 [30/09 20:14:23]
+[INFO] Rendering view 5 [30/09 20:14:23]
+[INFO] Fragment Number: 409802 [30/09 20:14:23]
+[INFO] Rendering view 6 [30/09 20:14:24]
+[INFO] Fragment Number: 432080 [30/09 20:14:24]
+[INFO] Rendering view 7 [30/09 20:14:24]
+[INFO] Fragment Number: 449536 [30/09 20:14:24]
+[INFO] Rendering view 8 [30/09 20:14:24]
+[INFO] Fragment Number: 463768 [30/09 20:14:24]
+[INFO] Rendering view 9 [30/09 20:14:24]
+[INFO] Fragment Number: 475293 [30/09 20:14:24]
+[INFO] Rendering view 10 [30/09 20:14:25]
+[INFO] Fragment Number: 484390 [30/09 20:14:25]
+[INFO] Rendering view 11 [30/09 20:14:25]
+[INFO] Fragment Number: 491920 [30/09 20:14:25]
+[INFO] Rendering view 12 [30/09 20:14:25]
+[INFO] Fragment Number: 497154 [30/09 20:14:25]
+[INFO] Rendering view 13 [30/09 20:14:25]
+[INFO] Fragment Number: 499252 [30/09 20:14:25]
+[INFO] Rendering view 14 [30/09 20:14:25]
+[INFO] Fragment Number: 499817 [30/09 20:14:25]
+[INFO] Rendering view 15 [30/09 20:14:26]
+[INFO] Fragment Number: 498591 [30/09 20:14:26]
+[INFO] Rendering view 16 [30/09 20:14:26]
+[INFO] Fragment Number: 493776 [30/09 20:14:26]
+[INFO] Rendering view 17 [30/09 20:14:26]
+[INFO] Fragment Number: 484788 [30/09 20:14:26]
+[INFO] Rendering view 18 [30/09 20:14:26]
+[INFO] Fragment Number: 470368 [30/09 20:14:26]
+[INFO] Rendering view 19 [30/09 20:14:27]
+[INFO] Fragment Number: 449108 [30/09 20:14:27]
+[INFO] Rendering view 20 [30/09 20:14:27]
+[INFO] Fragment Number: 425947 [30/09 20:14:27]
+[INFO] Rendering view 21 [30/09 20:14:27]
+[INFO] Fragment Number: 398894 [30/09 20:14:27]
+[INFO] Rendering view 22 [30/09 20:14:27]
+[INFO] Fragment Number: 375604 [30/09 20:14:27]
+[INFO] Rendering view 23 [30/09 20:14:28]
+[INFO] Fragment Number: 355610 [30/09 20:14:28]
+[INFO] Rendering view 24 [30/09 20:14:28]
+[INFO] Fragment Number: 340973 [30/09 20:14:28]
+[INFO] Rendering view 25 [30/09 20:14:28]
+[INFO] Fragment Number: 334330 [30/09 20:14:28]
+[INFO] Rendering view 26 [30/09 20:14:28]
+[INFO] Fragment Number: 334824 [30/09 20:14:28]
+[INFO] Rendering view 27 [30/09 20:14:29]
+[INFO] Fragment Number: 344251 [30/09 20:14:29]
+[INFO] Rendering view 28 [30/09 20:14:29]
+[INFO] Fragment Number: 357362 [30/09 20:14:29]
+[INFO] Rendering view 29 [30/09 20:14:29]
+[INFO] Fragment Number: 377845 [30/09 20:14:29]
+[INFO] Rendering view 30 [30/09 20:14:29]
+[INFO] Fragment Number: 399146 [30/09 20:14:29]
+[INFO] Rendering view 31 [30/09 20:14:30]
+[INFO] Fragment Number: 418767 [30/09 20:14:30]
+[INFO] Rendering view 32 [30/09 20:14:30]
+[INFO] Fragment Number: 432795 [30/09 20:14:30]
+[INFO] Rendering view 33 [30/09 20:14:30]
+[INFO] Fragment Number: 441637 [30/09 20:14:30]
+[INFO] Rendering view 34 [30/09 20:14:30]
+[INFO] Fragment Number: 445960 [30/09 20:14:30]
+[INFO] Rendering view 35 [30/09 20:14:31]
+[INFO] Fragment Number: 446858 [30/09 20:14:31]
+[INFO] Rendering view 36 [30/09 20:14:31]
+[INFO] Fragment Number: 444832 [30/09 20:14:31]
+[INFO] Rendering view 37 [30/09 20:14:31]
+[INFO] Fragment Number: 441311 [30/09 20:14:31]
+[INFO] Rendering view 38 [30/09 20:14:31]
+[INFO] Fragment Number: 435809 [30/09 20:14:31]
+[INFO] Rendering view 39 [30/09 20:14:32]
+[INFO] Fragment Number: 427237 [30/09 20:14:32]
+[INFO] Rendering view 40 [30/09 20:14:32]
+[INFO] Fragment Number: 417232 [30/09 20:14:32]
+[INFO] Rendering view 41 [30/09 20:14:32]
+[INFO] Fragment Number: 406017 [30/09 20:14:32]
+[INFO] Rendering view 42 [30/09 20:14:32]
+[INFO] Fragment Number: 391176 [30/09 20:14:32]
+[INFO] Rendering view 43 [30/09 20:14:33]
+[INFO] Fragment Number: 374607 [30/09 20:14:33]
+[INFO] Rendering view 44 [30/09 20:14:33]
+[INFO] Fragment Number: 356300 [30/09 20:14:33]
+[INFO] Rendering view 45 [30/09 20:14:33]
+[INFO] Fragment Number: 335551 [30/09 20:14:33]
+[INFO] Rendering view 46 [30/09 20:14:33]
+[INFO] Fragment Number: 315081 [30/09 20:14:33]
+[INFO] Rendering view 47 [30/09 20:14:33]
+[INFO] Fragment Number: 295280 [30/09 20:14:33]
+[INFO] Rendering view 48 [30/09 20:14:34]
+[INFO] Fragment Number: 279834 [30/09 20:14:34]
+[INFO] Rendering view 49 [30/09 20:14:34]
+[INFO] Fragment Number: 267822 [30/09 20:14:34]
+[INFO] Rendering view 50 [30/09 20:14:34]
+[INFO] Fragment Number: 263978 [30/09 20:14:34]
+[INFO] Rendering view 51 [30/09 20:14:34]
+[INFO] Fragment Number: 267086 [30/09 20:14:34]
+[INFO] Rendering view 52 [30/09 20:14:35]
+[INFO] Fragment Number: 274321 [30/09 20:14:35]
+[INFO] Rendering view 53 [30/09 20:14:35]
+[INFO] Fragment Number: 286567 [30/09 20:14:35]
+[INFO] Rendering view 54 [30/09 20:14:35]
+[INFO] Fragment Number: 298711 [30/09 20:14:35]
+[INFO] Rendering view 55 [30/09 20:14:35]
+[INFO] Fragment Number: 310730 [30/09 20:14:35]
+[INFO] Rendering view 56 [30/09 20:14:35]
+[INFO] Fragment Number: 321314 [30/09 20:14:35]
+[INFO] Rendering view 57 [30/09 20:14:36]
+[INFO] Fragment Number: 330600 [30/09 20:14:36]
+[INFO] Rendering view 58 [30/09 20:14:36]
+[INFO] Fragment Number: 339995 [30/09 20:14:36]
+[INFO] Rendering view 59 [30/09 20:14:36]
+[INFO] Fragment Number: 347859 [30/09 20:14:36]
+[INFO] Rendering view 60 [30/09 20:14:36]
+[INFO] Fragment Number: 354072 [30/09 20:14:36]
+[INFO] Rendering view 61 [30/09 20:14:37]
+[INFO] Fragment Number: 359852 [30/09 20:14:37]
+[INFO] Rendering view 62 [30/09 20:14:37]
+[INFO] Fragment Number: 363435 [30/09 20:14:37]
+[INFO] Rendering view 63 [30/09 20:14:37]
+[INFO] Fragment Number: 364716 [30/09 20:14:37]
+[INFO] Rendering view 64 [30/09 20:14:37]
+[INFO] Fragment Number: 363331 [30/09 20:14:37]
+[INFO] Rendering view 65 [30/09 20:14:37]
+[INFO] Fragment Number: 360266 [30/09 20:14:37]
+[INFO] Rendering view 66 [30/09 20:14:38]
+[INFO] Fragment Number: 354330 [30/09 20:14:38]
+[INFO] Rendering view 67 [30/09 20:14:38]
+[INFO] Fragment Number: 345427 [30/09 20:14:38]
+[INFO] Rendering view 68 [30/09 20:14:38]
+[INFO] Fragment Number: 336569 [30/09 20:14:38]
+[INFO] Rendering view 69 [30/09 20:14:38]
+[INFO] Fragment Number: 327004 [30/09 20:14:38]
+[INFO] Rendering view 70 [30/09 20:14:38]
+[INFO] Fragment Number: 318230 [30/09 20:14:38]
+[INFO] Rendering view 71 [30/09 20:14:39]
+[INFO] Fragment Number: 310442 [30/09 20:14:39]
+[INFO] Rendering view 72 [30/09 20:14:39]
+[INFO] Fragment Number: 303622 [30/09 20:14:39]
+[INFO] Rendering view 73 [30/09 20:14:39]
+[INFO] Fragment Number: 300230 [30/09 20:14:39]
+[INFO] Rendering view 74 [30/09 20:14:39]
+[INFO] Fragment Number: 297371 [30/09 20:14:39]
+[INFO] Rendering view 75 [30/09 20:14:39]
+[INFO] Fragment Number: 295943 [30/09 20:14:39]
+[INFO] Rendering view 76 [30/09 20:14:40]
+[INFO] Fragment Number: 297711 [30/09 20:14:40]
+[INFO] Rendering view 77 [30/09 20:14:40]
+[INFO] Fragment Number: 298755 [30/09 20:14:40]
+[INFO] Rendering view 78 [30/09 20:14:40]
+[INFO] Fragment Number: 301242 [30/09 20:14:40]
+[INFO] Rendering view 79 [30/09 20:14:40]
+[INFO] Fragment Number: 305137 [30/09 20:14:40]
+[INFO] Rendering view 80 [30/09 20:14:41]
+[INFO] Fragment Number: 309159 [30/09 20:14:41]
+[INFO] Rendering view 81 [30/09 20:14:41]
+[INFO] Fragment Number: 312723 [30/09 20:14:41]
+[INFO] Rendering view 82 [30/09 20:14:41]
+[INFO] Fragment Number: 316135 [30/09 20:14:41]
+[INFO] Rendering view 83 [30/09 20:14:41]
+[INFO] Fragment Number: 318850 [30/09 20:14:41]
+[INFO] Rendering view 84 [30/09 20:14:41]
+[INFO] Fragment Number: 320931 [30/09 20:14:41]
+[INFO] Rendering view 85 [30/09 20:14:42]
+[INFO] Fragment Number: 322945 [30/09 20:14:42]
+[INFO] Rendering view 86 [30/09 20:14:42]
+[INFO] Fragment Number: 323374 [30/09 20:14:42]
+[INFO] Rendering view 87 [30/09 20:14:42]
+[INFO] Fragment Number: 322620 [30/09 20:14:42]
+[INFO] Rendering view 88 [30/09 20:14:42]
+[INFO] Fragment Number: 320462 [30/09 20:14:42]
+[INFO] Rendering view 89 [30/09 20:14:42]
+[INFO] Fragment Number: 316568 [30/09 20:14:42]
+[INFO] Rendering view 90 [30/09 20:14:43]
+[INFO] Fragment Number: 310605 [30/09 20:14:43]
+[INFO] Rendering view 91 [30/09 20:14:43]
+[INFO] Fragment Number: 303568 [30/09 20:14:43]
+[INFO] Rendering view 92 [30/09 20:14:43]
+[INFO] Fragment Number: 296037 [30/09 20:14:43]
+[INFO] Rendering view 93 [30/09 20:14:43]
+[INFO] Fragment Number: 287373 [30/09 20:14:43]
+[INFO] Rendering view 94 [30/09 20:14:43]
+[INFO] Fragment Number: 278652 [30/09 20:14:43]
+[INFO] Rendering view 95 [30/09 20:14:44]
+[INFO] Fragment Number: 269690 [30/09 20:14:44]
+[INFO] Rendering view 96 [30/09 20:14:44]
+[INFO] Fragment Number: 261060 [30/09 20:14:44]
+[INFO] Rendering view 97 [30/09 20:14:44]
+[INFO] Fragment Number: 252744 [30/09 20:14:44]
+[INFO] Rendering view 98 [30/09 20:14:44]
+[INFO] Fragment Number: 246466 [30/09 20:14:44]
+[INFO] Rendering view 99 [30/09 20:14:44]
+[INFO] Fragment Number: 243131 [30/09 20:14:44]
+[INFO] Rendering view 100 [30/09 20:14:44]
+[INFO] Fragment Number: 242586 [30/09 20:14:44]
+[INFO] Rendering view 101 [30/09 20:14:45]
+[INFO] Fragment Number: 244408 [30/09 20:14:45]
+[INFO] Rendering view 102 [30/09 20:14:45]
+[INFO] Fragment Number: 248217 [30/09 20:14:45]
+[INFO] Rendering view 103 [30/09 20:14:45]
+[INFO] Fragment Number: 255393 [30/09 20:14:45]
+[INFO] Rendering view 104 [30/09 20:14:45]
+[INFO] Fragment Number: 264635 [30/09 20:14:45]
+[INFO] Rendering view 105 [30/09 20:14:45]
+[INFO] Fragment Number: 274031 [30/09 20:14:45]
+[INFO] Rendering view 106 [30/09 20:14:45]
+[INFO] Fragment Number: 283326 [30/09 20:14:45]
+[INFO] Rendering view 107 [30/09 20:14:46]
+[INFO] Fragment Number: 292656 [30/09 20:14:46]
+[INFO] Rendering view 108 [30/09 20:14:46]
+[INFO] Fragment Number: 301335 [30/09 20:14:46]
+[INFO] Rendering view 109 [30/09 20:14:46]
+[INFO] Fragment Number: 308967 [30/09 20:14:46]
+[INFO] Rendering view 110 [30/09 20:14:46]
+[INFO] Fragment Number: 316174 [30/09 20:14:46]
+[INFO] Rendering view 111 [30/09 20:14:46]
+[INFO] Fragment Number: 322333 [30/09 20:14:46]
+[INFO] Rendering view 112 [30/09 20:14:47]
+[INFO] Fragment Number: 326592 [30/09 20:14:47]
+[INFO] Rendering view 113 [30/09 20:14:47]
+[INFO] Fragment Number: 329819 [30/09 20:14:47]
+[INFO] Rendering view 114 [30/09 20:14:47]
+[INFO] Fragment Number: 331686 [30/09 20:14:47]
+[INFO] Rendering view 115 [30/09 20:14:47]
+[INFO] Fragment Number: 331856 [30/09 20:14:47]
+[INFO] Rendering view 116 [30/09 20:14:47]
+[INFO] Fragment Number: 331126 [30/09 20:14:47]
+[INFO] Rendering view 117 [30/09 20:14:48]
+[INFO] Fragment Number: 329583 [30/09 20:14:48]
+[INFO] Rendering view 118 [30/09 20:14:48]
+[INFO] Fragment Number: 325829 [30/09 20:14:48]
+[INFO] Rendering view 119 [30/09 20:14:48]
+[INFO] Fragment Number: 322068 [30/09 20:14:48]
+[INFO] Rendering view 120 [30/09 20:14:48]
+[INFO] Fragment Number: 318626 [30/09 20:14:48]
+[INFO] Rendering view 121 [30/09 20:14:48]
+[INFO] Fragment Number: 314353 [30/09 20:14:48]
+[INFO] Rendering view 122 [30/09 20:14:49]
+[INFO] Fragment Number: 310190 [30/09 20:14:49]
+[INFO] Rendering view 123 [30/09 20:14:49]
+[INFO] Fragment Number: 307354 [30/09 20:14:49]
+[INFO] Rendering view 124 [30/09 20:14:49]
+[INFO] Fragment Number: 305442 [30/09 20:14:49]
+[INFO] Rendering view 125 [30/09 20:14:49]
+[INFO] Fragment Number: 303801 [30/09 20:14:49]
+[INFO] Rendering view 126 [30/09 20:14:49]
+[INFO] Fragment Number: 304712 [30/09 20:14:49]
+[INFO] Rendering view 127 [30/09 20:14:50]
+[INFO] Fragment Number: 306145 [30/09 20:14:50]
+[INFO] Rendering view 128 [30/09 20:14:50]
+[INFO] Fragment Number: 309244 [30/09 20:14:50]
+[INFO] Rendering view 129 [30/09 20:14:50]
+[INFO] Fragment Number: 313013 [30/09 20:14:50]
+[INFO] Rendering view 130 [30/09 20:14:50]
+[INFO] Fragment Number: 319114 [30/09 20:14:50]
+[INFO] Rendering view 131 [30/09 20:14:50]
+[INFO] Fragment Number: 326422 [30/09 20:14:50]
+[INFO] Rendering view 132 [30/09 20:14:51]
+[INFO] Fragment Number: 333971 [30/09 20:14:51]
+[INFO] Rendering view 133 [30/09 20:14:51]
+[INFO] Fragment Number: 342409 [30/09 20:14:51]
+[INFO] Rendering view 134 [30/09 20:14:51]
+[INFO] Fragment Number: 350809 [30/09 20:14:51]
+[INFO] Rendering view 135 [30/09 20:14:51]
+[INFO] Fragment Number: 356939 [30/09 20:14:51]
+[INFO] Rendering view 136 [30/09 20:14:52]
+[INFO] Fragment Number: 361459 [30/09 20:14:52]
+[INFO] Rendering view 137 [30/09 20:14:52]
+[INFO] Fragment Number: 362996 [30/09 20:14:52]
+[INFO] Rendering view 138 [30/09 20:14:52]
+[INFO] Fragment Number: 361341 [30/09 20:14:52]
+[INFO] Rendering view 139 [30/09 20:14:52]
+[INFO] Fragment Number: 357666 [30/09 20:14:52]
+[INFO] Rendering view 140 [30/09 20:14:52]
+[INFO] Fragment Number: 352276 [30/09 20:14:52]
+[INFO] Rendering view 141 [30/09 20:14:53]
+[INFO] Fragment Number: 345244 [30/09 20:14:53]
+[INFO] Rendering view 142 [30/09 20:14:53]
+[INFO] Fragment Number: 337276 [30/09 20:14:53]
+[INFO] Rendering view 143 [30/09 20:14:53]
+[INFO] Fragment Number: 328530 [30/09 20:14:53]
+[INFO] Rendering view 144 [30/09 20:14:53]
+[INFO] Fragment Number: 317941 [30/09 20:14:53]
+[INFO] Rendering view 145 [30/09 20:14:53]
+[INFO] Fragment Number: 305435 [30/09 20:14:53]
+[INFO] Rendering view 146 [30/09 20:14:54]
+[INFO] Fragment Number: 293751 [30/09 20:14:54]
+[INFO] Rendering view 147 [30/09 20:14:54]
+[INFO] Fragment Number: 280989 [30/09 20:14:54]
+[INFO] Rendering view 148 [30/09 20:14:54]
+[INFO] Fragment Number: 271487 [30/09 20:14:54]
+[INFO] Rendering view 149 [30/09 20:14:54]
+[INFO] Fragment Number: 262872 [30/09 20:14:54]
+[INFO] Rendering view 150 [30/09 20:14:54]
+[INFO] Fragment Number: 260886 [30/09 20:14:54]
+[INFO] Rendering view 151 [30/09 20:14:55]
+[INFO] Fragment Number: 267086 [30/09 20:14:55]
+[INFO] Rendering view 152 [30/09 20:14:55]
+[INFO] Fragment Number: 277914 [30/09 20:14:55]
+[INFO] Rendering view 153 [30/09 20:14:55]
+[INFO] Fragment Number: 293221 [30/09 20:14:55]
+[INFO] Rendering view 154 [30/09 20:14:55]
+[INFO] Fragment Number: 311579 [30/09 20:14:55]
+[INFO] Rendering view 155 [30/09 20:14:56]
+[INFO] Fragment Number: 329213 [30/09 20:14:56]
+[INFO] Rendering view 156 [30/09 20:14:56]
+[INFO] Fragment Number: 347835 [30/09 20:14:56]
+[INFO] Rendering view 157 [30/09 20:14:56]
+[INFO] Fragment Number: 363859 [30/09 20:14:56]
+[INFO] Rendering view 158 [30/09 20:14:56]
+[INFO] Fragment Number: 380225 [30/09 20:14:56]
+[INFO] Rendering view 159 [30/09 20:14:57]
+[INFO] Fragment Number: 394386 [30/09 20:14:57]
+[INFO] Rendering view 160 [30/09 20:14:57]
+[INFO] Fragment Number: 407817 [30/09 20:14:57]
+[INFO] Rendering view 161 [30/09 20:14:57]
+[INFO] Fragment Number: 418171 [30/09 20:14:57]
+[INFO] Rendering view 162 [30/09 20:14:57]
+[INFO] Fragment Number: 425996 [30/09 20:14:57]
+[INFO] Rendering view 163 [30/09 20:14:57]
+[INFO] Fragment Number: 433188 [30/09 20:14:57]
+[INFO] Rendering view 164 [30/09 20:14:58]
+[INFO] Fragment Number: 438080 [30/09 20:14:58]
+[INFO] Rendering view 165 [30/09 20:14:58]
+[INFO] Fragment Number: 440654 [30/09 20:14:58]
+[INFO] Rendering view 166 [30/09 20:14:58]
+[INFO] Fragment Number: 440627 [30/09 20:14:58]
+[INFO] Rendering view 167 [30/09 20:14:58]
+[INFO] Fragment Number: 436387 [30/09 20:14:58]
+[INFO] Rendering view 168 [30/09 20:14:59]
+[INFO] Fragment Number: 427060 [30/09 20:14:59]
+[INFO] Rendering view 169 [30/09 20:14:59]
+[INFO] Fragment Number: 411984 [30/09 20:14:59]
+[INFO] Rendering view 170 [30/09 20:14:59]
+[INFO] Fragment Number: 391244 [30/09 20:14:59]
+[INFO] Rendering view 171 [30/09 20:14:59]
+[INFO] Fragment Number: 370669 [30/09 20:14:59]
+[INFO] Rendering view 172 [30/09 20:15:00]
+[INFO] Fragment Number: 349233 [30/09 20:15:00]
+[INFO] Rendering view 173 [30/09 20:15:00]
+[INFO] Fragment Number: 333943 [30/09 20:15:00]
+[INFO] Rendering view 174 [30/09 20:15:00]
+[INFO] Fragment Number: 321501 [30/09 20:15:00]
+[INFO] Rendering view 175 [30/09 20:15:00]
+[INFO] Fragment Number: 319080 [30/09 20:15:00]
+[INFO] Rendering view 176 [30/09 20:15:01]
+[INFO] Fragment Number: 327192 [30/09 20:15:01]
+[INFO] Rendering view 177 [30/09 20:15:01]
+[INFO] Fragment Number: 342421 [30/09 20:15:01]
+[INFO] Rendering view 178 [30/09 20:15:01]
+[INFO] Fragment Number: 362529 [30/09 20:15:01]
+[INFO] Rendering view 179 [30/09 20:15:01]
+[INFO] Fragment Number: 388011 [30/09 20:15:01]
+[INFO] Rendering view 180 [30/09 20:15:02]
+[INFO] Fragment Number: 416225 [30/09 20:15:02]
+[INFO] Rendering view 181 [30/09 20:15:02]
+[INFO] Fragment Number: 442858 [30/09 20:15:02]
+[INFO] Rendering view 182 [30/09 20:15:02]
+[INFO] Fragment Number: 462646 [30/09 20:15:02]
+[INFO] Rendering view 183 [30/09 20:15:02]
+[INFO] Fragment Number: 477427 [30/09 20:15:02]
+[INFO] Rendering view 184 [30/09 20:15:03]
+[INFO] Fragment Number: 485880 [30/09 20:15:03]
+[INFO] Rendering view 185 [30/09 20:15:03]
+[INFO] Fragment Number: 489722 [30/09 20:15:03]
+[INFO] Rendering view 186 [30/09 20:15:03]
+[INFO] Fragment Number: 492290 [30/09 20:15:03]
+[INFO] Rendering view 187 [30/09 20:15:03]
+[INFO] Fragment Number: 492157 [30/09 20:15:03]
+[INFO] Rendering view 188 [30/09 20:15:04]
+[INFO] Fragment Number: 489132 [30/09 20:15:04]
+[INFO] Rendering view 189 [30/09 20:15:04]
+[INFO] Fragment Number: 484862 [30/09 20:15:04]
+[INFO] Rendering view 190 [30/09 20:15:04]
+[INFO] Fragment Number: 478994 [30/09 20:15:04]
+[INFO] Rendering view 191 [30/09 20:15:04]
+[INFO] Fragment Number: 469689 [30/09 20:15:04]
+[INFO] Rendering view 192 [30/09 20:15:05]
+[INFO] Fragment Number: 458345 [30/09 20:15:05]
+[INFO] Rendering view 193 [30/09 20:15:05]
+[INFO] Fragment Number: 444509 [30/09 20:15:05]
+[INFO] Rendering view 194 [30/09 20:15:05]
+[INFO] Fragment Number: 426691 [30/09 20:15:05]
+[INFO] Rendering view 195 [30/09 20:15:05]
+[INFO] Fragment Number: 403459 [30/09 20:15:05]
+[INFO] Rendering view 196 [30/09 20:15:05]
+[INFO] Fragment Number: 375858 [30/09 20:15:05]
+[INFO] Rendering view 197 [30/09 20:15:06]
+[INFO] Fragment Number: 348564 [30/09 20:15:06]
+[INFO] Rendering view 198 [30/09 20:15:06]
+[INFO] Fragment Number: 323657 [30/09 20:15:06]
+[INFO] Rendering view 199 [30/09 20:15:06]
+[INFO] Fragment Number: 307108 [30/09 20:15:06]
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
+[INFO] Using OBB: 1
