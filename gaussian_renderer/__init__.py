@@ -27,6 +27,7 @@ def render(
     scaling_modifier=1.0,
     override_color=None,
     obb_flag=False,
+    prev_depth=None,
 ):
     """
     Render the scene.
@@ -50,6 +51,12 @@ def render(
     tanfovx = math.tan(viewpoint_camera.FoVx * 0.5)
     tanfovy = math.tan(viewpoint_camera.FoVy * 0.5)
 
+    if prev_depth is None:
+        prev_depth = torch.zeros(pc.get_xyz.shape[0], dtype=torch.int32, device="cuda")
+
+    # print(viewpoint_camera.world_view_transform, viewpoint_camera.full_proj_transform)
+    # print(viewpoint_camera.projection_matrix) # Constant
+
     raster_settings = GaussianRasterizationSettings(
         image_height=int(viewpoint_camera.image_height),
         image_width=int(viewpoint_camera.image_width),
@@ -65,6 +72,7 @@ def render(
         debug=pipe.debug,
         f_count=False,
         obb_flag=obb_flag,
+        prev_depth=prev_depth
     )
 
     rasterizer = GaussianRasterizer(raster_settings=raster_settings)
@@ -124,7 +132,7 @@ def render(
     #     "visibility_filter": radii > 0,
     #     "radii": radii,
     # }
-    rendered_image, buffer = rasterizer(
+    rendered_image, buffer, current_depth = rasterizer(
     # buffer = rasterizer(
         means3D = means3D,
         means2D = means2D,
@@ -140,7 +148,8 @@ def render(
     return {
             "render": rendered_image,
             "viewspace_points": screenspace_points,
-            "buffer": buffer
+            "buffer": buffer,
+            "current_depth": current_depth
             }
 
 
