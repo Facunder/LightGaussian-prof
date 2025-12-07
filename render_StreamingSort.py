@@ -123,6 +123,10 @@ def render_set(model_path, name, iteration, views, gaussians, pipeline, backgrou
     makedirs(gts_path, exist_ok=True)
 
     for idx, view in enumerate(tqdm(views, desc="Rendering progress")):
+        # debug
+        # if idx == 1:
+        #     break
+            
         print("[INFO] Rendering view {}".format(idx))
         # precisely sort once every k frames
         k = 10
