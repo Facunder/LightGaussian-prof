@@ -112,7 +112,7 @@ def get_bin_buffer_offset(P:int, align=128):
 
 def render_set(model_path, name, iteration, views, gaussians, pipeline, background):
     # It seems that interpolating view pose can not contribute to Sorting Error Elimination
-    Interp_N = 0
+    Interp_N = 0 # Useless
     views = insert_interpolated_poses(views, Interp_N)
     print("[INFO] InterpEach Number: {}, Interpolated views number: {}".format(Interp_N, len(views)))
 
@@ -125,15 +125,38 @@ def render_set(model_path, name, iteration, views, gaussians, pipeline, backgrou
     for idx, view in enumerate(tqdm(views, desc="Rendering progress")):
         print("[INFO] Rendering view {}".format(idx))
         # precisely sort once every k frames
-        k = 10
-        if idx % k == 0: # if idx == 0:
-            prev_depth = None
+        k_sort = 10
+        if idx % k_sort == 0: # if idx == 0:
+            prev_depth = None          
         else:
             prev_depth = current_depth
-        
-        render_pkg = render(view, gaussians, pipeline, background, obb_flag=True, prev_depth=prev_depth)    
+        # approx preprocess
+        k_opt_pp = 2
+        if idx % k_opt_pp == 0:
+            prev_projmatrix=None
+            prev_viewmatrix=None
+            prev_linearmatrix=None
+            prev_jacobimatrix=None
+            prev_means2D=None
+            prev_cov2D=None
+        else: 
+            prev_projmatrix=current_projmatrix
+            prev_viewmatrix=current_viewmatrix
+            prev_linearmatrix=current_linearmatrix
+            prev_jacobimatrix=current_jacobimatrix
+            prev_means2D=current_means2D
+            prev_cov2D=current_cov2D
+
+        render_pkg = render(view, gaussians, pipeline, background, obb_flag=True, prev_depth=prev_depth, frame_id=idx,
+            prev_projmatrix=prev_projmatrix, prev_viewmatrix=prev_viewmatrix, prev_linearmatrix=prev_linearmatrix, prev_jacobimatrix=prev_jacobimatrix, prev_means2D=prev_means2D, prev_cov2D=prev_cov2D)    
         
         current_depth = render_pkg["current_depth"]
+        current_projmatrix = view.full_proj_transform
+        current_viewmatrix = view.world_view_transform
+        current_linearmatrix = render_pkg["current_linearmatrix"]
+        current_jacobimatrix = render_pkg["current_jacobimatrix"]
+        current_means2D = render_pkg["current_means2D"]
+        current_cov2D = render_pkg["current_cov2D"]
         
         if idx%(Interp_N+1) == 0:
             # static fragments

@@ -28,6 +28,13 @@ def render(
     override_color=None,
     obb_flag=False,
     prev_depth=None,
+    frame_id=-1,
+    prev_projmatrix=None,
+    prev_viewmatrix=None,
+    prev_linearmatrix=None,
+    prev_jacobimatrix=None,
+    prev_means2D=None,
+    prev_cov2D=None
 ):
     """
     Render the scene.
@@ -53,6 +60,18 @@ def render(
 
     if prev_depth is None:
         prev_depth = torch.zeros(pc.get_xyz.shape[0], dtype=torch.int32, device="cuda")
+    if prev_projmatrix is None:
+        prev_projmatrix = torch.zeros(16, dtype=torch.float32, device="cuda")
+    if prev_viewmatrix is None:
+        prev_viewmatrix = torch.zeros(16, dtype=torch.float32, device="cuda")
+    if prev_linearmatrix is None:
+        prev_linearmatrix = torch.zeros((pc.get_xyz.shape[0], 9), dtype=torch.float32, device="cuda")
+    if prev_jacobimatrix is None:
+        prev_jacobimatrix = torch.zeros((pc.get_xyz.shape[0], 4), dtype=torch.float32, device="cuda")
+    if prev_means2D is None:
+        prev_means2D = torch.zeros((pc.get_xyz.shape[0], 4), dtype=torch.float32, device="cuda")
+    if prev_cov2D is None:
+        prev_cov2D = torch.zeros((pc.get_xyz.shape[0], 3), dtype=torch.float32, device="cuda")
 
     # print(viewpoint_camera.world_view_transform, viewpoint_camera.full_proj_transform)
     # print(viewpoint_camera.projection_matrix) # Constant
@@ -72,7 +91,14 @@ def render(
         debug=pipe.debug,
         f_count=False,
         obb_flag=obb_flag,
-        prev_depth=prev_depth
+        prev_depth=prev_depth,
+        frame_id=frame_id,
+        prev_projmatrix = prev_projmatrix,
+        prev_viewmatrix = prev_viewmatrix,
+        prev_linearmatrix = prev_linearmatrix,
+        prev_jacobimatrix = prev_jacobimatrix,
+        prev_means2D = prev_means2D,
+        prev_cov2D = prev_cov2D
     )
 
     rasterizer = GaussianRasterizer(raster_settings=raster_settings)
@@ -132,7 +158,7 @@ def render(
     #     "visibility_filter": radii > 0,
     #     "radii": radii,
     # }
-    rendered_image, buffer, current_depth = rasterizer(
+    rendered_image, buffer, current_depth, current_linearmatrix, current_jacobimatrix, current_means2D, current_cov2D = rasterizer(
     # buffer = rasterizer(
         means3D = means3D,
         means2D = means2D,
@@ -149,7 +175,11 @@ def render(
             "render": rendered_image,
             "viewspace_points": screenspace_points,
             "buffer": buffer,
-            "current_depth": current_depth
+            "current_depth": current_depth,
+            "current_linearmatrix": current_linearmatrix,
+            "current_jacobimatrix": current_jacobimatrix,
+            "current_means2D": current_means2D,
+            "current_cov2D": current_cov2D
             }
 
 
